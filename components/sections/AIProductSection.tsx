@@ -6,19 +6,19 @@ import { motion } from 'framer-motion';
 const products = [
     {
         id: 1,
-        src: '/images/ai-product/1.png',
+        src: '/images/ai-product/1.avif',
         alt: 'AI Product Variant 1',
         flavor: 'Original'
     },
     {
         id: 2,
-        src: '/images/ai-product/2.png',
+        src: '/images/ai-product/2.avif',
         alt: 'AI Product Variant 2',
         flavor: 'Berry Blast'
     },
     {
         id: 3,
-        src: '/images/ai-product/3.png',
+        src: '/images/ai-product/3.avif',
         alt: 'AI Product Variant 3',
         flavor: 'Citrus Zest'
     }

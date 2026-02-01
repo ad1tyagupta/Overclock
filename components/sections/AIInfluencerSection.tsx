@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-    { id: 1, src: '/images/ai-influencer/1.png', alt: 'AI Influencer Casual' },
-    { id: 2, src: '/images/ai-influencer/2.jpeg', alt: 'AI Influencer Urban' },
-    { id: 3, src: '/images/ai-influencer/3.jpeg', alt: 'AI Influencer Professional' },
-    { id: 4, src: '/images/ai-influencer/4.png', alt: 'AI Influencer Futuristic' },
-    { id: 5, src: '/images/ai-influencer/5.png', alt: 'AI Influencer Artistic' },
+    { id: 1, src: '/images/ai-influencer/1.avif', alt: 'AI Influencer Casual' },
+    { id: 2, src: '/images/ai-influencer/2.avif', alt: 'AI Influencer Urban' },
+    { id: 3, src: '/images/ai-influencer/3.avif', alt: 'AI Influencer Professional' },
+    { id: 4, src: '/images/ai-influencer/4.avif', alt: 'AI Influencer Futuristic' },
+    { id: 5, src: '/images/ai-influencer/5.avif', alt: 'AI Influencer Artistic' },
 ];
 
 export default function AIInfluencerSection() {
