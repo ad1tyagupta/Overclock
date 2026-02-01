@@ -9,7 +9,7 @@ const archivo = Archivo({
 
 export const metadata: Metadata = {
   title: "Overclock",
-  description: "The ultimate iPhone.",
+  description: "The ultimate energy drink.",
 };
 
 export default function RootLayout({
