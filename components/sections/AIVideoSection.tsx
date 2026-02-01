@@ -24,25 +24,23 @@ export default function AIVideoSection() {
             <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black pointer-events-none" />
 
             <div className="container mx-auto px-4 z-10 relative">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                    <div>
-                        <h2 className="text-orange-500 font-medium tracking-wide uppercase mb-4">
-                            Cinematography
-                        </h2>
-                        <h3 className="text-4xl md:text-6xl font-bold text-white">
-                            AI in Motion
-                        </h3>
-                    </div>
-                    <p className="text-neutral-400 max-w-md text-lg leading-relaxed text-right md:text-left">
+                <div className="text-center mb-16">
+                    <h2 className="text-orange-500 font-medium tracking-wide uppercase mb-4">
+                        Cinematography
+                    </h2>
+                    <h3 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                        AI in Motion
+                    </h3>
+                    <p className="text-neutral-400 max-w-2xl mx-auto text-lg leading-relaxed">
                         Blending generative visuals with storytelling to create compelling narratives.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="flex justify-center">
                     {videos.map((video) => (
                         <motion.div
                             key={video.id}
-                            className="group relative aspect-video cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-neutral-900"
+                            className="group relative w-full max-w-5xl h-[50vh] md:h-[500px] cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-neutral-900"
                             whileHover={{ scale: 1.02 }}
                             transition={{ duration: 0.3 }}
                             onClick={() => setSelectedVideo(video.youtubeId)}
@@ -72,9 +70,6 @@ export default function AIVideoSection() {
                             </div>
                         </motion.div>
                     ))}
-
-                    {/* Placeholder for "More Coming Soon" if needed, 
-                        or just leave it empty for now as requested. */}
                 </div>
             </div>
 

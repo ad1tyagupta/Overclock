@@ -73,7 +73,7 @@ export default function AIInfluencerSection() {
                     </p>
                 </div>
 
-                <div className="relative w-full max-w-5xl mx-auto h-[60vh] md:h-[700px] flex items-center justify-center">
+                <div className="relative w-full max-w-5xl mx-auto h-[50vh] md:h-[500px] flex items-center justify-center">
 
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.img
@@ -129,8 +129,8 @@ export default function AIInfluencerSection() {
                                     setCurrentIndex(index);
                                 }}
                                 className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
-                                        ? 'bg-orange-500 w-8'
-                                        : 'bg-white/30 hover:bg-white/50'
+                                    ? 'bg-orange-500 w-8'
+                                    : 'bg-white/30 hover:bg-white/50'
                                     }`}
                             />
                         ))}
