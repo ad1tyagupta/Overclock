@@ -69,7 +69,7 @@ export default function AIInfluencerSection() {
                         Consistent Identity,<br /> Limitless Worlds
                     </h3>
                     <p className="text-neutral-400 max-w-2xl mx-auto text-lg leading-relaxed">
-                        Demonstrating the power of generative AI to maintain character consistency across diverse environments and artistic styles.
+                        Consistent on-brand persona for ads, user-generated style content, and storytelling, reusable across formats, scenes, and styles.
                     </p>
                 </div>
 

@@ -29,7 +29,7 @@ export default function AIVideoSection() {
                         Cinematography
                     </h2>
                     <h3 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        AI in Motion
+                        Story-first ads that perform
                     </h3>
                     <p className="text-neutral-400 max-w-2xl mx-auto text-lg leading-relaxed">
                         Blending generative visuals with storytelling to create compelling narratives.

@@ -41,7 +41,7 @@ export default function AIProductSection() {
                         Product Reimagined
                     </h3>
                     <p className="text-neutral-400 max-w-2xl mx-auto text-lg leading-relaxed">
-                        Generative AI enabling rapid iteration of product visuals in various contexts and styles.
+                        Premium product images for websites, social, and paid ads—fast iterations across angles, lighting, and backgrounds without reshoots.
                     </p>
                 </div>
 
