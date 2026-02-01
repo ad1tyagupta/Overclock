@@ -62,7 +62,7 @@ export default function HomeSection() {
                 {/* Top 1/3 Center: iPhone 17 */}
                 <div className="absolute top-[20%]" style={{ /* approx top 1/3 */ }}>
                     <h2 className="text-orange-500 font-medium text-xl md:text-2xl tracking-wide uppercase">
-                        iPhone 17
+                        Overclock
                     </h2>
                 </div>
 
