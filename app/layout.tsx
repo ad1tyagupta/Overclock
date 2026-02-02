@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
-import { GoogleAnalytics } from '@next/third-parties/google';
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+
 import "./globals.css";
 
 const archivo = Archivo({
