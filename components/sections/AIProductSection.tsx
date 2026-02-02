@@ -2,23 +2,24 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const products = [
     {
         id: 1,
-        src: '/images/ai-product/1.avif',
+        src: '/images/ai-product/aditya-gupta-overclock-energy-original-flavor.avif',
         alt: 'AI Product Variant 1',
         flavor: 'Original'
     },
     {
         id: 2,
-        src: '/images/ai-product/2.avif',
+        src: '/images/ai-product/aditya-gupta-overclock-energy-berry-blast.avif',
         alt: 'AI Product Variant 2',
         flavor: 'Berry Blast'
     },
     {
         id: 3,
-        src: '/images/ai-product/3.avif',
+        src: '/images/ai-product/aditya-gupta-overclock-energy-citrus-zest.avif',
         alt: 'AI Product Variant 3',
         flavor: 'Citrus Zest'
     }
@@ -53,10 +54,12 @@ export default function AIProductSection() {
                             whileHover={{ scale: 1.02 }}
                             transition={{ duration: 0.3 }}
                         >
-                            <img
+                            <Image
                                 src={product.src}
                                 alt={product.alt}
-                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                                className="object-cover transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100"
                             />
 
                             {/* Overlay Gradient */}

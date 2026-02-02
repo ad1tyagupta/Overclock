@@ -3,13 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 const images = [
-    { id: 1, src: '/images/ai-influencer/1.avif', alt: 'AI Influencer Casual' },
-    { id: 2, src: '/images/ai-influencer/2.avif', alt: 'AI Influencer Urban' },
-    { id: 3, src: '/images/ai-influencer/3.avif', alt: 'AI Influencer Professional' },
-    { id: 4, src: '/images/ai-influencer/4.avif', alt: 'AI Influencer Futuristic' },
-    { id: 5, src: '/images/ai-influencer/5.avif', alt: 'AI Influencer Artistic' },
+    { id: 1, src: '/images/ai-influencer/aditya-gupta-ai-influencer-casual.avif', alt: 'AI Influencer Casual' },
+    { id: 2, src: '/images/ai-influencer/aditya-gupta-ai-influencer-urban.avif', alt: 'AI Influencer Urban' },
+    { id: 3, src: '/images/ai-influencer/aditya-gupta-ai-influencer-professional.avif', alt: 'AI Influencer Professional' },
+    { id: 4, src: '/images/ai-influencer/aditya-gupta-ai-influencer-futuristic.avif', alt: 'AI Influencer Futuristic' },
+    { id: 5, src: '/images/ai-influencer/aditya-gupta-ai-influencer-artistic.avif', alt: 'AI Influencer Artistic' },
 ];
 
 export default function AIInfluencerSection() {
@@ -76,9 +77,8 @@ export default function AIInfluencerSection() {
                 <div className="relative w-full max-w-5xl mx-auto h-[50vh] md:h-[500px] flex items-center justify-center">
 
                     <AnimatePresence initial={false} custom={direction}>
-                        <motion.img
+                        <motion.div
                             key={currentIndex}
-                            src={images[currentIndex].src}
                             custom={direction}
                             variants={slideVariants}
                             initial="enter"
@@ -100,20 +100,31 @@ export default function AIInfluencerSection() {
                                     paginate(-1);
                                 }
                             }}
-                            className="absolute max-h-full max-w-full rounded-2xl shadow-2xl object-cover border border-white/10"
-                        />
+                            className="absolute w-full h-full rounded-2xl shadow-2xl overflow-hidden border border-white/10"
+                        >
+                            <Image
+                                src={images[currentIndex].src}
+                                alt={images[currentIndex].alt}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 80vw"
+                                className="object-cover pointer-events-none"
+                                draggable={false}
+                            />
+                        </motion.div>
                     </AnimatePresence>
 
                     {/* Navigation Buttons */}
                     <button
                         className="absolute left-4 md:left-8 z-20 bg-black/50 hover:bg-orange-500/80 text-white p-3 rounded-full backdrop-blur-md transition-all border border-white/10 group"
                         onClick={() => paginate(-1)}
+                        aria-label="Previous slide"
                     >
                         <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
                     </button>
                     <button
                         className="absolute right-4 md:right-8 z-20 bg-black/50 hover:bg-orange-500/80 text-white p-3 rounded-full backdrop-blur-md transition-all border border-white/10 group"
                         onClick={() => paginate(1)}
+                        aria-label="Next slide"
                     >
                         <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
                     </button>
@@ -132,6 +143,7 @@ export default function AIInfluencerSection() {
                                     ? 'bg-orange-500 w-8'
                                     : 'bg-white/30 hover:bg-white/50'
                                     }`}
+                                aria-label={`Go to slide ${index + 1}`}
                             />
                         ))}
                     </div>

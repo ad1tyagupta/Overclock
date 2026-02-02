@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X } from 'lucide-react';
+import Image from 'next/image';
 
 const videos = [
     {
@@ -10,7 +11,8 @@ const videos = [
         title: "The Ultimate Driving Machine",
         category: "Automotive Commercial",
         thumbnail: "/images/thumbnails/BMW.png",
-        youtubeId: "-sjrAcayRQQ" // ID from https://youtu.be/-sjrAcayRQQ
+        youtubeId: "-sjrAcayRQQ", // ID from https://youtu.be/-sjrAcayRQQ
+        description: "A cinematic fan-made ad of a concept BMW driving through the mountains and the lakes."
     }
     // Future videos can be added here
 ];
@@ -44,12 +46,16 @@ export default function AIVideoSection() {
                             whileHover={{ scale: 1.02 }}
                             transition={{ duration: 0.3 }}
                             onClick={() => setSelectedVideo(video.youtubeId)}
+                            role="button"
+                            aria-label={`Play video: ${video.title}`}
                         >
                             {/* Thumbnail */}
-                            <img
+                            <Image
                                 src={video.thumbnail}
                                 alt={video.title}
-                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 80vw"
+                                className="object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                             />
 
                             {/* Play Button Overlay */}
@@ -64,9 +70,12 @@ export default function AIVideoSection() {
                                 <p className="text-orange-500 text-xs font-bold tracking-wider mb-1 uppercase">
                                     {video.category}
                                 </p>
-                                <h4 className="text-white font-bold text-xl">
+                                <h4 className="text-white font-bold text-xl mb-2">
                                     {video.title}
                                 </h4>
+                                <p className="sr-only">
+                                    {video.description}
+                                </p>
                             </div>
                         </motion.div>
                     ))}
@@ -91,6 +100,7 @@ export default function AIVideoSection() {
                                     e.stopPropagation();
                                     setSelectedVideo(null);
                                 }}
+                                aria-label="Close video modal"
                             >
                                 <X className="w-8 h-8" />
                             </button>
@@ -103,6 +113,7 @@ export default function AIVideoSection() {
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowFullScreen
+                                loading="lazy"
                                 className="absolute inset-0"
                             ></iframe>
                         </div>
