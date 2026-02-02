@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 
 const archivo = Archivo({
@@ -100,6 +101,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <GoogleAnalytics gaId="G-8X8F7VCX7J" />
       </body>
     </html>
   );
